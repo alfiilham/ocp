@@ -1,0 +1,9 @@
+zone "cp.co.id." {
+    type master;
+    file "/etc/named/zones/db.record";
+};
+
+zone "20.1.10.in-addr.arpa" {
+    type master;
+    file "/etc/named/zones/db.ptr";
+};
