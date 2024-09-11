@@ -1,2 +1,3 @@
 https://mirror.openshift.com/pub/openshift-v4/clients/ocp/stable-4.16/openshift-client-linux.tar.gz
 https://mirror.openshift.com/pub/openshift-v4/clients/ocp/stable-4.16/openshift-install-linux.tar.gz
+oc get csr -o go-template='{{range .items}}{{if not .status}}{{.metadata.name}}{{"\n"}}{{end}}{{end}}' | xargs oc adm certificate approve
