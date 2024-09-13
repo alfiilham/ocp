@@ -14,3 +14,12 @@ spec:
   nodeSelector:
     matchLabels:
       node-role.kubernetes.io/infra-logmon: ""
+
+  nodePlacement:
+    nodeSelector:
+      matchLabels:
+        node-role.kubernetes.io/router: ''
+    tolerations:
+      - effect: NoSchedule
+        key: node-role.kubernetes.io/router
+        operator: Exists
