@@ -41,7 +41,7 @@ spec:
     type: "kibana"
     kibana:
       tolerations:
-        - key: "infra"
+        - key: "node-role.kubernetes.io/infra"
           operator: "Exists"
           effect: "NoSchedule"
       nodeSelector:
