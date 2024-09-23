@@ -1,5 +1,9 @@
 apiVersion: v1
 baseDomain: mmki.net
+proxy:
+  httpProxy: http://10.148.36.51:8080
+  httpsProxy: https://10.148.36.51:8080
+  noProxy: localhost,127.0.0.1
 compute: 
 - hyperthreading: Enabled 
   name: worker
