@@ -1,3 +1,5 @@
 # curl -kvv https://api-int.example.xyz.local:22623
 # dig +short api-int.example.xyz.local 
 # curl -kv https://quay.io/openshift-release-dev/ocp-release@sha256:aba54b293dc151f5c0fd96d4353ced6ced3e7da6620c1c10714ab32d0577486f
+
+systemctl restart bootkube.service release-image.service kubelet.service crio.service
