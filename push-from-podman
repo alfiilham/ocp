@@ -1,0 +1,2 @@
+oc patch configs.imageregistry.operator.openshift.io/cluster --patch '{"spec":{"defaultRoute":true}}' --type=merge
+podman login -u kubeadmin -p $(oc whoami -t) default-route-openshift-image-registry.apps.ocp.cp.co.id --tls-verify=false
