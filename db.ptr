@@ -1,5 +1,5 @@
 $TTL    604800
-@       IN      SOA     helper.cp.co.id. admin.cp.co.id. (
+@       IN      SOA     bastion.ocpvirt-poc.gudanggaram.co.id. admin.ocpvirt-poc.gudanggaram.co.id. (
                   6     ; Serial
              604800     ; Refresh
               86400     ; Retry
@@ -8,25 +8,15 @@ $TTL    604800
 )
 
 ; name servers - NS records
-    IN      NS     helper.cp.co.id.
+    IN      NS     bastion.ocpvirt-poc.gudanggaram.co.id.
 
 ; name servers - PTR records
-81   IN    PTR    helper.cp.co.id.
+100   IN    PTR    bastion.ocpvirt-poc.gudanggaram.co.id.
 
 ; OpenShift Container Platform Cluster - PTR records
-82    IN    PTR    bootstrap.cp.co.id.
-80    IN    PTR    bastion.cp.co.id.
-83    IN    PTR    master-01.cp.co.id.
-84    IN    PTR    master-02.cp.co.id.
-85    IN    PTR    master-03.cp.co.id.
-86    IN    PTR    infra-01.cp.co.id.
-87    IN    PTR    infra-02.cp.co.id.
-88    IN    PTR    infra-03.cp.co.id.
-89    IN    PTR    infra-odf-01.cp.co.id.
-90    IN    PTR    infra-odf-02.cp.co.id.
-91    IN    PTR    infra-odf-03.cp.co.id.
-92    IN    PTR    worker-01.cp.co.id.
-93    IN    PTR    worker-02.cp.co.id.
-94    IN    PTR    worker-03.cp.co.id.
-81    IN    PTR    api.cp.co.id.
-81    IN    PTR    api-int.cp.co.id.
+101    IN    PTR    bootstrap.ocpvirt-poc.gudanggaram.co.id.
+102    IN    PTR    master-01.ocpvirt-poc.gudanggaram.co.id.
+103    IN    PTR    master-02.ocpvirt-poc.gudanggaram.co.id.
+104    IN    PTR    master-03.ocpvirt-poc.gudanggaram.co.id.
+100    IN    PTR    api.ocpvirt-poc.gudanggaram.co.id.
+100    IN    PTR    api-int.ocpvirt-poc.gudanggaram.co.id.
