@@ -1,9 +1,9 @@
-zone "cp.co.id." {
+zone "ocpvirt-poc.gudanggaram.co.id." {
     type master;
     file "/etc/named/zones/db.record";
 };
 
-zone "20.1.10.in-addr.arpa" {
+zone "138.50.10.in-addr.arpa" {
     type master;
     file "/etc/named/zones/db.ptr";
 };
