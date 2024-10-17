@@ -1,5 +1,5 @@
 $TTL    604800
-@       IN      SOA     helper.cp.co.id. admin.cp.co.id. (
+@       IN      SOA     bastion.ocpvirt-poc.gudanggaram.co.id. admin.ocpvirt-poc.gudanggaram.co.id. (
                   1     ; Serial
              604800     ; Refresh
               86400     ; Retry
@@ -11,25 +11,15 @@ $TTL    604800
     IN      NS      helper
 
 ; name servers - A records
-helper.cp.co.id.          IN      A       10.1.20.81
+bastion.ocpvirt-poc.gudanggaram.co.id.          IN      A       10.50.138.100
 
 ; OpenShift Container Platform Cluster - A records
-bootstrap.cp.co.id.         IN      A       10.1.20.82
-bastion.cp.co.id.         	IN      A       10.1.20.80
-master-01.cp.co.id.         IN      A       10.1.20.83
-master-02.cp.co.id.         IN      A       10.1.20.84
-master-03.cp.co.id.         IN      A       10.1.20.85
-infra-01.cp.co.id.          IN      A       10.1.20.86
-infra-02.cp.co.id.          IN      A       10.1.20.87
-infra-03.cp.co.id.          IN      A       10.1.20.88
-infra-odf-01.cp.co.id.      IN      A       10.1.20.89
-infra-odf-02.cp.co.id.      IN      A       10.1.20.90
-infra-odf-03.cp.co.id.      IN      A       10.1.20.91
-worker-01.cp.co.id.         IN      A       10.1.20.92
-worker-02.cp.co.id.         IN      A       10.1.20.93
-worker-03.cp.co.id.         IN      A       10.1.20.94
+bootstrap.ocpvirt-poc.gudanggaram.co.id.         IN      A       10.50.138.101
+master-01.ocpvirt-poc.gudanggaram.co.id.         IN      A       10.50.138.102
+master-02.ocpvirt-poc.gudanggaram.co.id.         IN      A       10.50.138.103
+master-03.ocpvirt-poc.gudanggaram.co.id.         IN      A       10.50.138.104
 
 ; OpenShift internal cluster IPs - A records
-api.cp.co.id.              IN      A       10.1.20.81
-api-int.cp.co.id.          IN      A       10.1.20.81
-*.apps.cp.co.id.           IN      A       10.1.20.81
+api.ocpvirt-poc.gudanggaram.co.id.              IN      A       10.50.138.100
+api-int.ocpvirt-poc.gudanggaram.co.id.          IN      A       10.50.138.100
+*.apps.ocpvirt-poc.gudanggaram.co.id.           IN      A       10.50.138.100
