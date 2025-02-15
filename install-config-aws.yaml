@@ -1,0 +1,56 @@
+# schema: https://github.com/openshift/installer/blob/master/pkg/types/installconfig.go
+apiVersion: v1
+metadata:
+  name: ${CLUSTER_NAME}
+baseDomain: ${BASE_DOMAIN}
+controlPlane:
+  architecture: amd64
+  hyperthreading: Enabled
+  name: master
+  platform:
+    aws:
+      defaultMachinePlatform:
+        type: m6i.4xlarge
+      subnets:
+        - subnet-xxxxxx  # Ganti dengan subnet untuk master node
+  replicas: 3
+compute:
+- architecture: amd64
+  hyperthreading: Enabled
+  name: worker
+  platform:
+    aws:
+      defaultMachinePlatform:
+        type: m6i.4xlarge
+      subnets:
+        - subnet-yyyyyy  # Ganti dengan subnet untuk worker node
+        - subnet-zzzzzz  # Bisa menambahkan lebih banyak subnet jika diperlukan
+  replicas: 5
+networking:
+  networkType: OVNKubernetes
+  clusterNetwork:
+  - cidr: 10.128.0.0/14
+    hostPrefix: 23
+  machineNetwork:
+  - cidr: 10.0.0.0/16
+  serviceNetwork:
+  - 172.30.0.0/16
+platform:
+  aws:
+    region: us-east-1
+    defaultMachinePlatform:
+      type: m6i.4xlarge
+    privateLink: true  # Mengaktifkan PrivateLink agar komunikasi tetap dalam jaringan privat
+    vpc: vpc-xxxxx  # Ganti dengan VPC yang digunakan
+    serviceEndpoints:
+      - name: ec2
+        url: https://ec2.us-east-1.amazonaws.com
+      - name: s3
+        url: https://s3.us-east-1.amazonaws.com
+      - name: elasticloadbalancing
+        url: https://elasticloadbalancing.us-east-1.amazonaws.com
+      - name: sts
+        url: https://sts.us-east-1.amazonaws.com
+publish: Internal  # Mengubah dari "External" ke "Internal" agar cluster tidak terbuka ke publik
+pullSecret: '${OPENSHIFT_PULL_SECRET}'
+sshKey: '${SSH_PUBLIC_KEY}'
