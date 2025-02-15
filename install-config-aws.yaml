@@ -11,8 +11,6 @@ controlPlane:
     aws:
       defaultMachinePlatform:
         type: m6i.4xlarge
-      subnets:
-        - subnet-xxxxxx  # Ganti dengan subnet untuk master node
   replicas: 3
 compute:
 - architecture: amd64
@@ -22,9 +20,6 @@ compute:
     aws:
       defaultMachinePlatform:
         type: m6i.4xlarge
-      subnets:
-        - subnet-yyyyyy  # Ganti dengan subnet untuk worker node
-        - subnet-zzzzzz  # Bisa menambahkan lebih banyak subnet jika diperlukan
   replicas: 5
 networking:
   networkType: OVNKubernetes
@@ -38,11 +33,12 @@ networking:
 platform:
   aws:
     region: us-east-1
-    defaultMachinePlatform:
-      type: m6i.4xlarge
-    privateLink: true  # Mengaktifkan PrivateLink agar komunikasi tetap dalam jaringan privat
-    vpc: vpc-xxxxx  # Ganti dengan VPC yang digunakan
-    serviceEndpoints:
+    privateLink: true  # Mengaktifkan PrivateLink untuk komunikasi internal AWS
+    subnets:  # Memastikan subnet yang sudah didefinisikan digunakan
+      - subnet-xxxxxx  # Ganti dengan subnet ID untuk master nodes
+      - subnet-yyyyyy  # Ganti dengan subnet ID untuk worker nodes
+      - subnet-zzzzzz  # Tambahkan jika perlu lebih banyak subnet
+    serviceEndpoints:  # Menentukan endpoint AWS agar tetap dalam PrivateLink
       - name: ec2
         url: https://ec2.us-east-1.amazonaws.com
       - name: s3
@@ -51,6 +47,6 @@ platform:
         url: https://elasticloadbalancing.us-east-1.amazonaws.com
       - name: sts
         url: https://sts.us-east-1.amazonaws.com
-publish: Internal  # Mengubah dari "External" ke "Internal" agar cluster tidak terbuka ke publik
+publish: Internal  # Mengubah dari "External" ke "Internal" agar tidak terbuka ke internet
 pullSecret: '${OPENSHIFT_PULL_SECRET}'
 sshKey: '${SSH_PUBLIC_KEY}'
