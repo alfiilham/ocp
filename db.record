@@ -1,5 +1,5 @@
 $TTL    604800
-@       IN      SOA     bastion.ocpvirt-poc.gudanggaram.co.id. admin.ocpvirt-poc.gudanggaram.co.id. (
+@       IN      SOA     bastion.ocp.ojk.go.id. admin.ocp.ojk.go.id. (
                   1     ; Serial
              604800     ; Refresh
               86400     ; Retry
@@ -8,18 +8,24 @@ $TTL    604800
 )
 
 ; name servers - NS records
-    IN      NS      helper
+    IN      NS      bastion
 
 ; name servers - A records
-bastion.ocpvirt-poc.gudanggaram.co.id.          IN      A       10.50.138.100
+bastion.ocp.ojk.go.id.          IN      A       10.225.60.144
 
 ; OpenShift Container Platform Cluster - A records
-bootstrap.ocpvirt-poc.gudanggaram.co.id.         IN      A       10.50.138.101
-master-01.ocpvirt-poc.gudanggaram.co.id.         IN      A       10.50.138.102
-master-02.ocpvirt-poc.gudanggaram.co.id.         IN      A       10.50.138.103
-master-03.ocpvirt-poc.gudanggaram.co.id.         IN      A       10.50.138.104
+bootstrap.ocp.ojk.go.id.             IN      A       10.225.60.144
+B1D1-SLKMSTR1.ocp.ojk.go.id.         IN      A       10.225.60.145
+B1D1-SLKMSTR1.ocp.ojk.go.id.         IN      A       10.225.60.146
+B1D1-SLKMSTR1.ocp.ojk.go.id.         IN      A       10.225.60.147
+B1D1-SLKWKR1.ocp.ojk.go.id.          IN      A       10.225.60.141
+B1D1-SLKWKR1.ocp.ojk.go.id.          IN      A       10.225.60.142
+B1D1-SLKWKR1.ocp.ojk.go.id.          IN      A       10.225.60.143
+B1D1-SLKINFR1.ocp.ojk.go.id.         IN      A       10.225.60.148
+B1D1-SLKINFR1.ocp.ojk.go.id.         IN      A       10.225.60.149
+
 
 ; OpenShift internal cluster IPs - A records
-api.ocpvirt-poc.gudanggaram.co.id.              IN      A       10.50.138.100
-api-int.ocpvirt-poc.gudanggaram.co.id.          IN      A       10.50.138.100
-*.apps.ocpvirt-poc.gudanggaram.co.id.           IN      A       10.50.138.100
+api.ocp.ojk.go.id.              IN      A       10.225.60.144
+api-int.ocp.ojk.go.id.          IN      A       10.225.60.144
+*.apps.ocp.ojk.go.id.           IN      A       10.225.60.144
