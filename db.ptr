@@ -1,5 +1,5 @@
 $TTL    604800
-@       IN      SOA     bastion.ocpvirt-poc.gudanggaram.co.id. admin.ocpvirt-poc.gudanggaram.co.id. (
+@       IN      SOA     bastion.ocp.ojk.go.id. admin.ocp.ojk.go.id. (
                   6     ; Serial
              604800     ; Refresh
               86400     ; Retry
@@ -8,15 +8,20 @@ $TTL    604800
 )
 
 ; name servers - NS records
-    IN      NS     bastion.ocpvirt-poc.gudanggaram.co.id.
+    IN      NS     bastion..ocp.ojk.go.id.
 
 ; name servers - PTR records
-100   IN    PTR    bastion.ocpvirt-poc.gudanggaram.co.id.
+144   IN    PTR    bastion.ocp.ojk.go.id.
 
 ; OpenShift Container Platform Cluster - PTR records
-101    IN    PTR    bootstrap.ocpvirt-poc.gudanggaram.co.id.
-102    IN    PTR    master-01.ocpvirt-poc.gudanggaram.co.id.
-103    IN    PTR    master-02.ocpvirt-poc.gudanggaram.co.id.
-104    IN    PTR    master-03.ocpvirt-poc.gudanggaram.co.id.
-100    IN    PTR    api.ocpvirt-poc.gudanggaram.co.id.
-100    IN    PTR    api-int.ocpvirt-poc.gudanggaram.co.id.
+143    IN    PTR    bootstrap.ocp.ojk.go.id.
+145    IN    PTR    B1D1-SLKMSTR1.ocp.ojk.go.id.
+146    IN    PTR    B1D1-SLKMSTR2.ocp.ojk.go.id.
+147    IN    PTR    B1D1-SLKMSTR3.ocp.ojk.go.id.
+141    IN    PTR    B1D1-SLKWKR1.ocp.ojk.go.id.
+142    IN    PTR    B1D1-SLKWKR2.ocp.ojk.go.id.
+#143    IN    PTR   B1D1-SLKWKR3.ocp.ojk.go.id.
+148    IN    PTR    B1D1-SLKWKR1.ocp.ojk.go.id.
+149    IN    PTR    B1D1-SLKWKR1.ocp.ojk.go.id.
+144    IN    PTR    api.ocp.ojk.go.id.
+144    IN    PTR    api-int.ocp.ojk.go.id.
