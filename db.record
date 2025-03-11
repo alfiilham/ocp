@@ -1,5 +1,5 @@
 $TTL    604800
-@       IN      SOA     bastion.ocp.ojk.go.id. admin.ocp.ojk.go.id. (
+@       IN      SOA     b1d1-slkbstn1.ocp.ojk.go.id. admin.ocp.ojk.go.id. (
                   1     ; Serial
              604800     ; Refresh
               86400     ; Retry
@@ -11,19 +11,17 @@ $TTL    604800
     IN      NS      bastion
 
 ; name servers - A records
-bastion.ocp.ojk.go.id.          IN      A       10.225.60.144
+b1d1-slkbstn1.ocp.ojk.go.id.          IN      A       10.225.60.144
 
 ; OpenShift Container Platform Cluster - A records
-bootstrap.ocp.ojk.go.id.             IN      A       10.225.60.144
-B1D1-SLKMSTR1.ocp.ojk.go.id.         IN      A       10.225.60.145
-B1D1-SLKMSTR1.ocp.ojk.go.id.         IN      A       10.225.60.146
-B1D1-SLKMSTR1.ocp.ojk.go.id.         IN      A       10.225.60.147
-B1D1-SLKWKR1.ocp.ojk.go.id.          IN      A       10.225.60.141
-B1D1-SLKWKR1.ocp.ojk.go.id.          IN      A       10.225.60.142
-B1D1-SLKWKR1.ocp.ojk.go.id.          IN      A       10.225.60.143
-B1D1-SLKINFR1.ocp.ojk.go.id.         IN      A       10.225.60.148
-B1D1-SLKINFR1.ocp.ojk.go.id.         IN      A       10.225.60.149
-
+b1d1-slkmstr1.ocp.ojk.go.id.         IN      A       10.225.60.145
+b1d1-slkmstr2.ocp.ojk.go.id.         IN      A       10.225.60.146
+b1d1-slkmstr3.ocp.ojk.go.id.         IN      A       10.225.60.147
+b1d1-slkwkr1.ocp.ojk.go.id.          IN      A       10.225.60.141
+b1d1-slkwkr2.ocp.ojk.go.id.          IN      A       10.225.60.142
+b1d1-slkwkr3.ocp.ojk.go.id.          IN      A       10.225.60.143
+b1d1-slkinfr1.ocp.ojk.go.id.         IN      A       10.225.60.148
+b1d1-slkinfr2.ocp.ojk.go.id.         IN      A       10.225.60.149
 
 ; OpenShift internal cluster IPs - A records
 api.ocp.ojk.go.id.              IN      A       10.225.60.144
