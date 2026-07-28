@@ -1,0 +1,18 @@
+apiVersion: machineconfiguration.openshift.io/v1
+kind: MachineConfig
+metadata:
+  name: multipath-conf-default
+  labels:
+    machineconfiguration.openshift.io/role: worker
+spec:
+  config:
+    ignition:
+      version: 3.1.0
+    storage:
+      files:
+      - contents:
+          source: data:text/plain;charset=utf-8;base64,ZGVmYXVsdHMgewogICAgZmluZF9tdWx0aXBhdGhzIG5vCn0KCmJsYWNrbGlzdCB7CiAgICBkZXZpY2UgewogICAgICAgIHByb2R1Y3QgLioKICAgICAgICB2ZW5kb3IgIC4qCiAgICB9Cn0KCmJsYWNrbGlzdF9leGNlcHRpb25zIHsKICAgIGRldmljZSB7CiAgICAgICAgcHJvZHVjdCBMVU4KICAgICAgICB2ZW5kb3IgIE5FVEFQUAogICAgfQp9Cg==
+          verification: {}
+        filesystem: root
+        mode: 400
+        path: /etc/multipath.conf
