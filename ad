@@ -1,3 +1,0 @@
-ldaps://<hostname-DC>:636/DC=ocbcnisp,DC=com?sAMAccountName?sub?(memberOf=CN=OVE_user,OU=RHOVE,OU=Application,OU=Groups,DC=ocbcnisp,DC=com)
-
-CN=ove.svc,OU=Services Account,OU=Lokasi User,DC=ocbcnisp,DC=com
