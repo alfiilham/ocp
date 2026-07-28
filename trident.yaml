@@ -1,0 +1,40 @@
+# a90-ons.yaml
+apiVersion: v1
+kind: Secret
+metadata:
+  name: a90-ons-fc-secret
+type: Opaque
+stringData:
+  username: -
+  password: -
+---
+apiVersion: trident.netapp.io/v1
+kind: TridentBackendConfig
+metadata:
+  name: tbc-a90-ons
+spec:
+  version: 1
+  storageDriverName: ontap-san
+  managementLIF: 10.110.249.47
+  backendName: a90-ons
+  svm: SVM-OVE-A90-ONS
+  sanType: fcp
+  storagePrefix: trident-oveos
+  defaults:
+    nameTemplate: "{{ .config.StoragePrefix }}_{{ .volume.Namespace }}_{{ .volume.RequestName }}"
+  credentials:
+    name: a90-ons-fc-secret
+# sc-fc.yaml
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: sc-a90-ons-fc
+provisioner: csi.trident.netapp.io
+parameters:
+  backendType: "ontap-san"
+  media: "ssd"
+  provisioningType: "thin"
+  fsType: ext4
+  snapshots: "true"
+  storagePools: "a90-ons:.*"
+allowVolumeExpansion: true
